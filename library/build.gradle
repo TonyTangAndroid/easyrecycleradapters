@@ -29,18 +29,16 @@ android {
   }
 
   dexOptions {
-    preDexLibraries = parent.ext.predexLibraries
-    incremental true
     javaMaxHeapSize "4g"
   }
 }
 
 dependencies {
-  compile parent.ext.libraries.recyclerview
-  compile parent.ext.libraries.appcompat
+  implementation parent.ext.libraries.recyclerview
+  implementation parent.ext.libraries.appcompat
 
-  androidTestCompile parent.ext.testLibraries.runner
-  androidTestCompile parent.ext.testLibraries.mockito
+  androidTestImplementation parent.ext.testLibraries.runner
+  androidTestImplementation parent.ext.testLibraries.mockito
 }
 
 // Used to push in maven

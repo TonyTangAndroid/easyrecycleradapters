@@ -29,9 +29,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':library')
-    compile parent.ext.libraries.appcompat
-    compile parent.ext.libraries.butterknife
-    compile parent.ext.libraries.picasso
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':library')
+    implementation parent.ext.libraries.appcompat
+    implementation parent.ext.libraries.recyclerview
+    implementation parent.ext.libraries.butterknife
+    annotationProcessor parent.ext.libraries.butterknife
+    implementation parent.ext.libraries.picasso
 }
