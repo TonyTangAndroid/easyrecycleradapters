@@ -2,8 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/refreshLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -12,23 +11,19 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent"/>
 
         <ProgressBar
             android:id="@+id/loadingView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            />
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/empty_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:textColor="@color/empty_list_text_color"
-            />
+            android:gravity="center"/>
 
     </FrameLayout>
 
