@@ -9,14 +9,13 @@ import com.carlosdelachica.easyrecycleradapters.sample.R;
 import com.carlosdelachica.sample.data.ImageData;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class ImageEasyViewHolder extends EasyViewHolder<ImageData> {
 
-    @InjectView(R.id.image) ImageView image;
-
     private final Picasso picasso;
+    @BindView(R.id.image) ImageView image;
 
     public ImageEasyViewHolder(Context context, ViewGroup parent) {
         this(context, parent, Picasso.with(context));
@@ -25,7 +24,7 @@ public class ImageEasyViewHolder extends EasyViewHolder<ImageData> {
     public ImageEasyViewHolder(Context context, ViewGroup parent, Picasso picasso) {
         super(context, parent, R.layout.image_item);
         this.picasso = picasso;
-        ButterKnife.inject(this, itemView);
+        ButterKnife.bind(this, itemView);
     }
 
     @Override

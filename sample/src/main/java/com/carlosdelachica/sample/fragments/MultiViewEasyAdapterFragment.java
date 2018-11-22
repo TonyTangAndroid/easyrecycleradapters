@@ -22,8 +22,8 @@ import com.carlosdelachica.sample.data.DataGenerator;
 import com.carlosdelachica.sample.data.ImageData;
 import com.carlosdelachica.sample.data.TextData;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemClickListener;
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemLongClickListener;
@@ -31,7 +31,7 @@ import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.On
 public class MultiViewEasyAdapterFragment extends Fragment implements OnItemClickListener,
         OnItemLongClickListener {
 
-    @InjectView(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     private EasyRecyclerAdapter adapter;
@@ -39,7 +39,7 @@ public class MultiViewEasyAdapterFragment extends Fragment implements OnItemClic
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.simple_recycler_view_layout, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 

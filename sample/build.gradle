@@ -34,6 +34,6 @@ dependencies {
     implementation parent.ext.libraries.appcompat
     implementation parent.ext.libraries.recyclerview
     implementation parent.ext.libraries.butterknife
-    annotationProcessor parent.ext.libraries.butterknife
+    annotationProcessor parent.ext.libraries.butterknifeCompiler
     implementation parent.ext.libraries.picasso
 }

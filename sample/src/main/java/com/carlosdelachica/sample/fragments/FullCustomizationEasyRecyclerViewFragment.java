@@ -26,19 +26,19 @@ import com.carlosdelachica.sample.data.DataGenerator;
 import com.carlosdelachica.sample.data.ImageData;
 import com.carlosdelachica.sample.data.TextData;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class FullCustomizationEasyRecyclerViewFragment extends Fragment implements EasyViewHolder.OnItemClickListener,
         EasyViewHolder.OnItemLongClickListener {
 
-    @InjectView(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    @InjectView(R.id.empty_list)
+    @BindView(R.id.empty_list)
     TextView emptyList;
-    @InjectView(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     SwipeRefreshLayout refreshLayout;
-    @InjectView(R.id.loadingView)
+    @BindView(R.id.loadingView)
     ProgressBar loadingView;
 
     private Handler handler;
@@ -47,7 +47,7 @@ public class FullCustomizationEasyRecyclerViewFragment extends Fragment implemen
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.swipe_to_refresh_recycler_view_layout, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -126,12 +126,6 @@ public class FullCustomizationEasyRecyclerViewFragment extends Fragment implemen
             handler.removeCallbacksAndMessages(null);
             handler = null;
         }
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
     }
 
     @Override

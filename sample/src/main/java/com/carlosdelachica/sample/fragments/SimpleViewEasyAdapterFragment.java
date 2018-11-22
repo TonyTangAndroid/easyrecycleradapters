@@ -15,12 +15,12 @@ import android.widget.Toast;
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyRecyclerAdapter;
 import com.carlosdelachica.easyrecycleradapters.decorations.DividerItemDecoration;
 import com.carlosdelachica.easyrecycleradapters.sample.R;
-import com.carlosdelachica.sample.data.ImageData;
 import com.carlosdelachica.sample.adapter.view_holders.ImageEasyViewHolder;
 import com.carlosdelachica.sample.data.DataGenerator;
+import com.carlosdelachica.sample.data.ImageData;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemClickListener;
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemLongClickListener;
@@ -28,7 +28,7 @@ import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.On
 public class SimpleViewEasyAdapterFragment extends Fragment implements OnItemLongClickListener,
         OnItemClickListener {
 
-    @InjectView(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     private EasyRecyclerAdapter adapter;
@@ -36,7 +36,7 @@ public class SimpleViewEasyAdapterFragment extends Fragment implements OnItemLon
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.simple_recycler_view_layout, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 

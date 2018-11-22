@@ -14,19 +14,19 @@ import com.carlosdelachica.sample.fragments.FullCustomizationEasyRecyclerViewFra
 import com.carlosdelachica.sample.fragments.MultiViewEasyAdapterFragment;
 import com.carlosdelachica.sample.fragments.SimpleViewEasyAdapterFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity{
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         initToolbar();
         if (savedInstanceState == null) {
             navigateToFragment(new SimpleViewEasyAdapterFragment());

@@ -35,7 +35,8 @@ ext {
 
 ext.libraries = [recyclerview        : 'com.android.support:recyclerview-v7:28.0.0',
                  appcompat           : 'com.android.support:appcompat-v7:28.0.0',
-                 butterknife         : 'com.jakewharton:butterknife:5.0.0',
+                 butterknife         : 'com.jakewharton:butterknife:8.8.1',
+                 butterknifeCompiler : 'com.jakewharton:butterknife-compiler:9.0.0-rc2',
                  picasso             : 'com.squareup.picasso:picasso:2.2.0',
                  easyrecycleradapters: 'com.github.cmc00022:easyrecycleradapters:1.1.1']
 

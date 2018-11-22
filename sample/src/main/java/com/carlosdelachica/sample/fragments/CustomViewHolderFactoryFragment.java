@@ -20,8 +20,8 @@ import com.carlosdelachica.sample.adapter.view_holders.ImageEasyViewHolder;
 import com.carlosdelachica.sample.data.DataGenerator;
 import com.carlosdelachica.sample.data.ImageData;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemClickListener;
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemLongClickListener;
@@ -29,7 +29,7 @@ import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.On
 public class CustomViewHolderFactoryFragment extends Fragment implements OnItemLongClickListener,
         OnItemClickListener {
 
-    @InjectView(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     private EasyRecyclerAdapter adapter;
@@ -37,7 +37,7 @@ public class CustomViewHolderFactoryFragment extends Fragment implements OnItemL
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.simple_recycler_view_layout, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
