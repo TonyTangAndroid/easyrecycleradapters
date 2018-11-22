@@ -7,13 +7,14 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
-    private static final int[] ATTRS = { android.R.attr.listDivider };
+    private static final int[] ATTRS = {android.R.attr.listDivider};
 
     private Drawable divider;
     private int insets;
@@ -42,7 +43,8 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void onDrawOver(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
+    public void onDrawOver(@NonNull Canvas canvas, @NonNull RecyclerView parent,
+                           @NonNull RecyclerView.State state) {
         drawHorizontal(canvas, parent);
         drawToTheRightOfEachChildren(canvas, parent);
     }
@@ -50,7 +52,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public void drawHorizontal(Canvas c, RecyclerView parent) {
         int childCount = parent.getChildCount();
         if (childCount == 0) return;
-        int left, top , right, bottom;
+        int left, top, right, bottom;
         View currentChild;
         for (int i = 0; i < childCount; i++) {
             currentChild = parent.getChildAt(i);
@@ -95,7 +97,8 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
+                               @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         //We can supply forced insets for each item view here in the Rect
         if (addInsets) {
             outRect.set(insets, insets, insets, insets);
