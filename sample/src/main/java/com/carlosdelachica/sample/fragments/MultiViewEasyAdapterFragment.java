@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyRecyclerAdapter;
-import com.carlosdelachica.easyrecycleradapters.decorations.DividerItemDecoration;
 import com.carlosdelachica.easyrecycleradapters.sample.R;
 import com.carlosdelachica.sample.adapter.view_holder_factories.CustomViewHolderFactory;
 import com.carlosdelachica.sample.adapter.view_holders.ImageEasyViewHolder;
@@ -21,6 +20,7 @@ import com.carlosdelachica.sample.data.TextData;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -67,7 +67,7 @@ public class MultiViewEasyAdapterFragment extends Fragment implements OnItemClic
     private void initRecyclerView() {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.grid_columns)));
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(requireActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(requireActivity(),DividerItemDecoration.HORIZONTAL));
     }
 
     private void initData() {

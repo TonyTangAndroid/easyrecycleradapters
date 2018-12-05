@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyRecyclerAdapter;
-import com.carlosdelachica.easyrecycleradapters.decorations.DividerItemDecoration;
 
 import java.util.List;
 
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 

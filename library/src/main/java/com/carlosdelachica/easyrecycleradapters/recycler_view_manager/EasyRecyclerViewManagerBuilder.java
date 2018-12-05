@@ -8,10 +8,10 @@ import android.widget.TextView;
 import com.carlosdelachica.easyrecycleradapters.R;
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyRecyclerAdapter;
 import com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder;
-import com.carlosdelachica.easyrecycleradapters.decorations.DividerItemDecoration;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -143,8 +143,8 @@ public class EasyRecyclerViewManagerBuilder {
         if (divider == null) {
             divider = context.getResources().getDrawable(R.drawable.default_divider);
         }
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context, divider);
-
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL);
+        dividerItemDecoration.setDrawable(divider);
         return new EasyRecyclerViewManager(context,
                 recyclerView,
                 layoutManager,
