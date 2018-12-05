@@ -2,12 +2,14 @@ package com.carlosdelachica.easyrecycleradapters.adapter.debouncedlisteners;
 
 import android.view.View;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4.class)
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+
+import static org.junit.Assert.assertEquals;
+
+@RunWith(AndroidJUnit4.class)
 public class DebouncedClickHandlerTest {
 
     DebouncedClickHandler handler = new DebouncedClickHandler(new StubListener());
@@ -17,7 +19,7 @@ public class DebouncedClickHandlerTest {
     public void testWithinThreshold() {
         simulateClick();
         simulateClick();
-        Assert.assertEquals(1, counter);
+        assertEquals(1, counter);
     }
 
     private void simulateClick() {
@@ -29,7 +31,7 @@ public class DebouncedClickHandlerTest {
         simulateClick();
         Thread.sleep(DebouncedClickHandler.MINIMUM_INTERVAL_MILLIS + 50);
         simulateClick();
-        Assert.assertEquals(2, counter);
+        assertEquals(2, counter);
     }
 
     private class StubListener extends DebouncedOnClickListener {

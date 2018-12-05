@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 
 import java.util.List;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
@@ -15,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4.class)
+@RunWith(AndroidJUnit4.class)
 public class EasyRecyclerAdapterTest {
 
     public static final List<Object> LIST = singletonList(new Object());
@@ -35,25 +37,24 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddAllNullList_throwsIllegalArgumentException() throws Exception {
+    public void testAddAllNullList_throwsIllegalArgumentException() {
         adapter.addAll(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAppendAllNullList_throwsIllegalArgumentException() throws Exception {
+    public void testAppendAllNullList_throwsIllegalArgumentException() {
         adapter.appendAll(null);
     }
 
     @Test
-    public void testAddAll_returnsItemCountEqualsListSize() throws Exception {
+    public void testAddAll_returnsItemCountEqualsListSize() {
         adapter.addAll(LIST_WITH_3_ITEMS);
 
         assertEquals(3, adapter.getItemCount());
     }
 
     @Test
-    public void testUpdateExistingItem_returnTrueAndReturnUpdatedItemAndDoNotChangeItemCount()
-            throws Exception {
+    public void testUpdateExistingItem_returnTrueAndReturnUpdatedItemAndDoNotChangeItemCount() {
         Object updatedItem = new Object();
 
         adapter.add(ITEM);
@@ -65,15 +66,14 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testRemoveWithNullParameter_returnsFalse() throws Exception {
+    public void testRemoveWithNullParameter_returnsFalse() {
         boolean remove = adapter.remove(null);
 
         assertFalse(remove);
     }
 
     @Test
-    public void testRemoveValidItem_returnsTrueAndRemovesObjectAndDecreaseItemCountByOne()
-            throws Exception {
+    public void testRemoveValidItem_returnsTrueAndRemovesObjectAndDecreaseItemCountByOne() {
         adapter.add(ITEM);
 
         boolean remove = adapter.remove(ITEM);
@@ -83,14 +83,14 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testRemovedInvalidIndex_returnsFalse() throws Exception {
+    public void testRemovedInvalidIndex_returnsFalse() {
         boolean remove = adapter.remove(-1);
 
         assertFalse(remove);
     }
 
     @Test
-    public void testGetItem_returnsCorrectItem() throws Exception {
+    public void testGetItem_returnsCorrectItem() {
         adapter.addAll(LIST_WITH_4_ITEMS);
 
         Object item = adapter.get(3);
@@ -99,7 +99,7 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testGetIndex_returnsCorrectIndex() throws Exception {
+    public void testGetIndex_returnsCorrectIndex() {
         adapter.addAll(LIST_WITH_4_ITEMS);
 
         int adapterIndex = adapter.getIndex(ITEM_AT_INDEX_3);
@@ -108,8 +108,7 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testRemoveValidIndex_returnsTrueAndRemovesObjectAndDecreaseItemCountByOne()
-            throws Exception {
+    public void testRemoveValidIndex_returnsTrueAndRemovesObjectAndDecreaseItemCountByOne() {
         adapter.add(ITEM);
 
         boolean remove = adapter.remove(0);
@@ -119,7 +118,7 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testClear_emptyDataSet() throws Exception {
+    public void testClear_emptyDataSet() {
         adapter.addAll(LIST);
 
         adapter.clear();
@@ -128,12 +127,12 @@ public class EasyRecyclerAdapterTest {
     }
 
     @Test
-    public void testIsEmptyByDefault() throws Exception {
+    public void testIsEmptyByDefault() {
         assertIsEmpty();
     }
 
     @Test
-    public void testIsNotEmptyAfterAddingItem() throws Exception {
+    public void testIsNotEmptyAfterAddingItem() {
         adapter.add(ITEM);
 
         assertFalse(adapter.isEmpty());
