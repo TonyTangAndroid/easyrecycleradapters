@@ -13,14 +13,16 @@ import butterknife.ButterKnife;
 
 public class TextDataEasyViewHolder extends EasyViewHolder<TextData> {
 
-    @BindView(R.id.text) TextView title;
+    @BindView(R.id.text)
+    TextView title;
 
     public TextDataEasyViewHolder(Context context, ViewGroup parent) {
         super(context, parent, R.layout.text_item);
         ButterKnife.bind(this, itemView);
     }
 
-    @Override public void bindTo(TextData item) {
+    @Override
+    public void bindTo(TextData item) {
         title.setText(item.getTitle());
     }
 

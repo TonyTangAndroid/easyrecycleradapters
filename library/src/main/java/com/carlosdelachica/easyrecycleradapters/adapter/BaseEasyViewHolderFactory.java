@@ -2,6 +2,7 @@ package com.carlosdelachica.easyrecycleradapters.adapter;
 
 import android.content.Context;
 import android.view.ViewGroup;
+
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
