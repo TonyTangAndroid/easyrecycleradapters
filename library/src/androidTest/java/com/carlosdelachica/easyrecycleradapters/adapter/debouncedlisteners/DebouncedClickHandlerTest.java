@@ -1,6 +1,6 @@
 package com.carlosdelachica.easyrecycleradapters.adapter.debouncedlisteners;
 
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.runner.AndroidJUnit4;
 import android.view.View;
 import junit.framework.Assert;
 import org.junit.Test;

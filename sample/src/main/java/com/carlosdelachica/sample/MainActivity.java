@@ -1,10 +1,6 @@
 package com.carlosdelachica.sample;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,6 +10,11 @@ import com.carlosdelachica.sample.fragments.FullCustomizationEasyRecyclerViewFra
 import com.carlosdelachica.sample.fragments.MultiViewEasyAdapterFragment;
 import com.carlosdelachica.sample.fragments.SimpleViewEasyAdapterFragment;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity{
     private void initToolbar() {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            ActionBar supportActionBar = getSupportActionBar();
+            assert supportActionBar != null;
+            supportActionBar.setDisplayHomeAsUpEnabled(false);
         }
     }
 

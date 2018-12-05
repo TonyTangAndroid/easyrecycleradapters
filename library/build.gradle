@@ -7,7 +7,7 @@ android {
   defaultConfig {
     compileSdkVersion parent.ext.compileSdkVersion
     buildToolsVersion parent.ext.buildToolsVersion
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     defaultConfig {
       minSdkVersion parent.ext.minSdkLibraryVersion
@@ -34,8 +34,8 @@ android {
 }
 
 dependencies {
-  implementation parent.ext.libraries.recyclerview
-  implementation parent.ext.libraries.appcompat
+  api parent.ext.libraries.recyclerview
+  api parent.ext.libraries.appcompat
 
   androidTestImplementation parent.ext.testLibraries.runner
   androidTestImplementation parent.ext.testLibraries.mockito

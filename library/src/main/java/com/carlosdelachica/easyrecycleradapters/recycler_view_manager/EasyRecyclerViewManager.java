@@ -1,7 +1,6 @@
 package com.carlosdelachica.easyrecycleradapters.recycler_view_manager;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +9,9 @@ import com.carlosdelachica.easyrecycleradapters.decorations.DividerItemDecoratio
 
 import java.util.List;
 
-import static android.support.v7.widget.RecyclerView.LayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.LayoutManager;
+
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemClickListener;
 import static com.carlosdelachica.easyrecycleradapters.adapter.EasyViewHolder.OnItemLongClickListener;
 
