@@ -50,7 +50,7 @@ public abstract class EasyViewHolder<V> extends AutoDisposeViewHolder
 
     public abstract void bindTo(V value);
 
-    protected void bindExtra(Map<String, Object> extraMap) {
+    public void bindExtra(Map<String, Object> extraMap) {
     }
 
     public interface OnItemClickListener {
