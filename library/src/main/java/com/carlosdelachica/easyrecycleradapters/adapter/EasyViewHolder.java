@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Map;
+
 import static android.view.View.OnClickListener;
 import static android.view.View.OnLongClickListener;
 
@@ -47,6 +49,9 @@ public abstract class EasyViewHolder<V> extends AutoDisposeViewHolder
     }
 
     public abstract void bindTo(V value);
+
+    protected void bindExtra(Map<String, Object> extraMap) {
+    }
 
     public interface OnItemClickListener {
         void onItemClick(final int position, View view);
