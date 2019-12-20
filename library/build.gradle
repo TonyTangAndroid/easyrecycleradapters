@@ -27,10 +27,6 @@ android {
             minifyEnabled false
         }
     }
-
-    dexOptions {
-        javaMaxHeapSize "4g"
-    }
 }
 
 dependencies {

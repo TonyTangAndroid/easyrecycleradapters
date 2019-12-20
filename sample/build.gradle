@@ -29,10 +29,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':library')
     implementation parent.ext.libraries.appcompat
     implementation parent.ext.libraries.recyclerview
+    implementation parent.ext.libraries.swiperefreshlayout
     implementation parent.ext.libraries.butterknife
     annotationProcessor parent.ext.libraries.butterknifeCompiler
     implementation parent.ext.libraries.picasso
